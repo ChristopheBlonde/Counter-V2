@@ -23,21 +23,14 @@ const Counter = () => {
   return (
     <div className="counter">
       <div className="count">
-        {count > 0 && (
-          <FontAwesomeIcon
-            className="iconCount"
-            onClick={handleMinus}
-            icon="minus"
-          />
-        )}
-        <div>{count}</div>
-        {count < 10 && (
-          <FontAwesomeIcon
-            className="iconCount"
-            onClick={handlePlus}
-            icon="plus"
-          />
-        )}
+        <div className="iconCount">
+          {count > 0 && <FontAwesomeIcon onClick={handleMinus} icon="minus" />}
+        </div>
+
+        <div className="center">{count}</div>
+        <div className="iconCount">
+          {count < 10 && <FontAwesomeIcon onClick={handlePlus} icon="plus" />}
+        </div>
       </div>
       <button onClick={handleReset} className="button">
         Reset
